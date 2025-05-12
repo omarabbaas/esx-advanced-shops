@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESX Advanced Shops</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="shop-ui" class="container">
+            <div class="header">
+                <h1><i class="fas fa-store"></i> <span id="shop-name">Shop</span></h1>
+                <button id="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="buy"><i class="fas fa-shopping-basket"></i> Buy</button>
+                <button class="tab-btn" data-tab="cart"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</button>
+                <button class="tab-btn" data-tab="management" id="management-tab" style="display: none;"><i class="fas fa-cogs"></i> Management</button>
+            </div>
+            
+            <div class="tab-content" id="buy-tab">
+                <div class="search-container">
+                    <input type="text" id="search-items" placeholder="Search items...">
+                </div>
+                
+                <div class="items-container">
+                    <!-- Items will be populated here -->
+                </div>
+            </div>
+            
+            <div class="tab-content" id="cart-tab" style="display: none;">
+                <div class="cart-container">
+                    <!-- Cart items will be populated here -->
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="total">Total: $<span id="cart-total">0</span></div>
+                    <div class="buttons">
+                        <button id="empty-cart-btn"><i class="fas fa-trash"></i> Empty Cart</button>
+                        <button id="checkout-btn"><i class="fas fa-cash-register"></i> Checkout</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="management-tab" style="display: none;">
+                <div class="management-options">
+                    <button data-action="stock"><i class="fas fa-box"></i> Stock Management</button>
+                    <button data-action="employees"><i class="fas fa-users"></i> Employee Management</button>
+                    <button data-action="finances"><i class="fas fa-money-bill-wave"></i> Finances</button>
+                    <button data-action="settings"><i class="fas fa-cog"></i> Shop Settings</button>
+                    <button data-action="orders"><i class="fas fa-truck"></i> Order Stock</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Context menus and dialogs will be added dynamically -->
+    </div>
+    
+    <script src="js/app.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>
